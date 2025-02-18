@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart People</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://illustrarch.com/wp-content/uploads/2024/11/Modern-Architectural-Design.png') no-repeat center center fixed;
+            background-size: cover;
+            /* Make the background cover the entire page */
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        
+        h2 {
+            color: #28a745;
+            text-align: center;
+        }
+        
+        p {
+            margin: 10px 0;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .back-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Smart People</h2>
+        {% if people %}
+        <p><strong>Overview:</strong> {{ people[1] }}</p>
+        <p><strong>Key Solutions:</strong> {{ people[2] }}</p>
+        <p><strong>Challenges:</strong> {{ people[3] }}</p>
+        {% else %}
+        <p>No data available for Smart People.</p>
+        {% endif %}
+
+        <a href="{{ url_for('dashboard') }}" class="back-btn">Back to Dashboard</a>
+    </div>
+</body>
+
+</html>

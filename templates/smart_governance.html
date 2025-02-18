@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Governance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://www.oecd.org/adobe/dynamicmedia/deliver/dm-aid--eaf20507-b673-4b47-b5b8-07c18a36919f/e57ce301-en.jpg?quality=80&preferwebp=true') no-repeat center center fixed;
+            background-size: cover;
+            /* Ensures the background image covers the full page */
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        
+        h2 {
+            color: #17a2b8;
+            text-align: center;
+        }
+        
+        p {
+            margin: 10px 0;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #17a2b8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .back-btn:hover {
+            background-color: #138496;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Smart Governance</h2>
+        {% if governance %}
+        <p><strong>Overview:</strong> {{ governance[1] }}</p>
+        <p><strong>Solutions:</strong> {{ governance[2] }}</p>
+        <p><strong>Barriers:</strong> {{ governance[3] }}</p>
+        <p><strong>Future Directions:</strong> {{ governance[4] }}</p>
+        {% else %}
+        <p>No data available for Smart Governance.</p>
+        {% endif %}
+
+        <a href="{{ url_for('dashboard') }}" class="back-btn">Back to Dashboard</a>
+    </div>
+</body>
+
+</html>
